@@ -80,7 +80,7 @@ ui<-navbarPage(title="Food System Risks",
                                  shiny::HTML("<h5>The data used in this tool can be found in the repository at XXXXX. 
                                              The methodology to create this dataset can be found in the complementary paper,
                                              especially in supplementary materials. The orginial datasources are FAOSTAT for terrestrial
-                                             production data, FishStatJ for aquatic production data and the GENuS database (Smith et al. XXx)
+                                             production data, FishStatJ for aquatic production data and the GENuS database (Smith et al. 2018)
                                              for nutritonal data.</h5>")
                           ),
                           column(3)
