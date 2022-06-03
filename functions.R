@@ -446,6 +446,12 @@ make_fig2<-function(current_system, population){
                     "low"="#ACDF87ff"
   )
   
+  custom_shapes<-c("complete"=16,
+                   "high"=17,
+                   "medium"=18,
+                   "low"=15
+    
+  )
   
   panelA_square<-data.frame(y=rep(1,6),
                             x=seq(0,25,5)) 
@@ -511,7 +517,8 @@ make_fig2<-function(current_system, population){
     ylab("Population (%)")
   
   fig2B<-ggplot(current_system)+
-    geom_point(aes(x=h_index, y=richness, col=suff_group), size=3)+
+    geom_point(aes(x=h_index, y=richness, col=suff_group,shape=suff_group), size=3)+
+    scale_shape_manual(values=custom_shapes)+
     scale_color_manual(values=custom_palette)+
     theme_bw()+
     theme(legend.position = "none")+
