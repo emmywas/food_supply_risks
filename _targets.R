@@ -1,7 +1,7 @@
 #make.R script
 
 library(targets)
-source("./R_files/functions.R") # defines functions
+source("./functions.R") # defines functions
 
 tar_option_set(packages = c("tidyverse", "rnaturalearth","rnaturalearthdata","cowplot","sf"))
 
