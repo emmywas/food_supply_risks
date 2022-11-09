@@ -77,10 +77,9 @@ ui<-navbarPage(title="Food System Risks",
                           column(3),
                           column(6,
                                  shiny::HTML("<br><br><center> <h1>The Data</h1> </center><br>"),
-                                 shiny::HTML("<h5>The data used in this tool can be found in the repository at XXXXX. 
-                                             The methodology to create this dataset can be found in the complementary paper,
+                                 shiny::HTML("<h5>The data used in this tool can be found in the repository at https://doi.org/10.7910/DVN/VQW92D. The methodology to create this dataset can be found in the complementary paper,
                                              especially in supplementary materials. The orginial datasources are FAOSTAT for terrestrial
-                                             production data, FishStatJ for aquatic production data and the GENuS database (Smith et al. 2018)
+                                             production data, FishStatJ for aquatic production data and the GENuS database (Smith et al. 2016)
                                              for nutritonal data.</h5>")
                           ),
                           column(3)
@@ -134,7 +133,7 @@ ui<-navbarPage(title="Food System Risks",
                                         min=1961,max=2018,value=2018, sep = ""),
                             selectInput("country", "Select Country:", 
                                         choices=country_choices),
-                            selectInput("nutrient","Select Nutrient:", choices=nutrient_choices),
+                            selectInput("nutrient","Select Nutrient or Calories:", choices=nutrient_choices),
                             width = 2
                           ), #close of Sidebar Panel
                           mainPanel(
@@ -185,7 +184,7 @@ server <- function(input, output,session) {
       geom_hline(yintercept = 150, col="red", linetype=2)+
       theme(legend.position = "none")+
       scale_y_continuous(name="Percentage sufficiency")+
-      scale_x_discrete(name="Nutrients")
+      scale_x_discrete(name="Nutrients and Calories")
     
   })
   
